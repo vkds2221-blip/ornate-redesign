@@ -1,0 +1,1260 @@
+<!--
+  ============================================================
+  DESIGN CONCEPT — FOR ASSESSMENT & PORTFOLIO USE ONLY
+  ============================================================
+  Designer  : Deepak Singh
+  Portfolio : https://www.behance.net/deepaksinghjl
+  Date      : 2025
+  Project   : Ornate TechnoServices Homepage Redesign (Concept)
+
+  © 2025 Deepak Singh. All rights reserved.
+  This design concept is the original creative work of Deepak Singh.
+  Unauthorized use, reproduction, or commercial deployment
+  of this design or code is strictly prohibited.
+
+  Ornate TechnoServices name, brand, and identity belong to
+  Ornate TechnoServices Pvt. Ltd. This is an unofficial redesign
+  concept created solely for UI/UX design assessment purposes.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Deepak Singh — behance.net/deepaksinghjl">
+<meta name="copyright" content="© 2025 Deepak Singh. Design concept for assessment purposes only. Unauthorized use prohibited.">
+<meta name="robots" content="noindex, nofollow">
+<title>Ornate TechnoServices | Shaping Tomorrow's Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=Onest:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0d1117;
+  --ink2:#1c2535;
+  --ink3:#2a3a52;
+  --smoke:#f4f3ef;
+  --paper:#fafaf8;
+  --white:#ffffff;
+  --orange:#e8500a;
+  --orange2:#f26522;
+  --blue:#0056d2;
+  --blue2:#1a73e8;
+  --teal:#00897b;
+  --muted:#6b7c93;
+  --muted2:#9aabbf;
+  --border:#e4e2dc;
+  --border2:#cdc9c1;
+}
+html{scroll-behavior:smooth}
+
+/* ── WATERMARK ── */
+.wm-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:rgba(13,17,23,0.92);
+  backdrop-filter:blur(10px);
+  border-top:1px solid rgba(232,80,10,0.35);
+  display:flex;align-items:center;justify-content:center;
+  gap:1.5rem;padding:10px 2rem;
+  font-family:'Onest',system-ui,sans-serif;
+}
+.wm-text{
+  font-size:12px;font-weight:400;
+  color:rgba(255,255,255,0.55);
+  letter-spacing:0.02em;
+}
+.wm-text strong{color:rgba(255,255,255,0.85);font-weight:600}
+.wm-text a{color:#e8500a;text-decoration:none;font-weight:500}
+.wm-text a:hover{text-decoration:underline}
+.wm-badge{
+  font-size:10px;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:#e8500a;
+  border:1px solid rgba(232,80,10,0.4);
+  padding:3px 10px;border-radius:100px;
+  white-space:nowrap;flex-shrink:0;
+}
+.wm-divider{width:1px;height:14px;background:rgba(255,255,255,0.12);flex-shrink:0}
+body{
+  font-family:'Onest',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  line-height:1.6;
+  padding-bottom:48px;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(250,250,248,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1300px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;height:68px;
+}
+.logo{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.25rem;font-weight:700;
+  color:var(--ink);text-decoration:none;
+  letter-spacing:-0.03em;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.logo-dot{
+  width:8px;height:8px;
+  background:var(--orange);border-radius:50%;
+  display:inline-block;
+}
+.nav-links{
+  display:flex;gap:0.25rem;list-style:none;
+}
+.nav-links a{
+  font-size:0.875rem;font-weight:400;
+  color:var(--muted);text-decoration:none;
+  padding:0.5rem 0.85rem;border-radius:6px;
+  transition:color 0.18s,background 0.18s;
+  letter-spacing:0.01em;
+}
+.nav-links a:hover{color:var(--ink);background:rgba(13,17,23,0.05)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-contact{
+  font-size:0.82rem;color:var(--muted);
+  text-decoration:none;font-weight:400;
+  letter-spacing:0.01em;
+  transition:color 0.18s;
+}
+.nav-contact:hover{color:var(--ink)}
+.btn-nav{
+  background:var(--ink);color:var(--white);
+  font-family:'Onest',sans-serif;
+  font-size:0.82rem;font-weight:500;
+  padding:0.55rem 1.4rem;border-radius:100px;
+  border:none;cursor:pointer;text-decoration:none;
+  letter-spacing:0.02em;
+  transition:background 0.18s,transform 0.15s;
+}
+.btn-nav:hover{background:var(--ink3);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  padding-top:68px;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.hero-top{
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  max-width:1300px;margin:0 auto;
+  padding:5rem 2.5rem 3rem;
+  gap:5rem;
+  align-items:center;
+  width:100%;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:var(--smoke);
+  border:1px solid var(--border);
+  color:var(--muted);
+  font-size:0.75rem;font-weight:500;
+  padding:0.4rem 0.9rem;border-radius:100px;
+  margin-bottom:2rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+.hero-tag::before{
+  content:'';width:6px;height:6px;
+  background:var(--orange);border-radius:50%;
+  flex-shrink:0;
+}
+.hero h1{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:clamp(3rem,5vw,4.5rem);
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-0.04em;
+  color:var(--ink);
+  margin-bottom:1.75rem;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--orange);
+}
+.hero-desc{
+  font-size:1.05rem;color:var(--muted);
+  font-weight:300;max-width:520px;
+  line-height:1.75;margin-bottom:2.5rem;
+}
+.hero-ctas{
+  display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;
+  margin-bottom:3.5rem;
+}
+.btn-primary{
+  background:var(--ink);color:var(--white);
+  font-family:'Onest',sans-serif;
+  font-size:0.9rem;font-weight:500;
+  padding:0.85rem 2rem;border-radius:100px;
+  border:none;cursor:pointer;text-decoration:none;
+  display:inline-block;
+  letter-spacing:0.02em;
+  transition:background 0.18s,transform 0.15s;
+}
+.btn-primary:hover{background:var(--ink3);transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--ink);
+  font-family:'Onest',sans-serif;
+  font-size:0.9rem;font-weight:400;
+  padding:0.85rem 2rem;border-radius:100px;
+  border:1.5px solid var(--border2);
+  cursor:pointer;text-decoration:none;
+  display:inline-block;
+  letter-spacing:0.02em;
+  transition:border-color 0.18s,background 0.18s;
+}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(13,17,23,0.04)}
+
+.trust-row{
+  display:flex;align-items:center;gap:2rem;flex-wrap:wrap;
+}
+.trust-badge{
+  display:flex;align-items:center;gap:0.5rem;
+  font-size:0.8rem;color:var(--muted2);
+  font-weight:400;
+}
+.trust-badge svg{width:14px;height:14px;fill:var(--teal);flex-shrink:0}
+
+/* ── HERO CARD ── */
+.hero-card{
+  background:var(--ink);
+  border-radius:20px;
+  padding:2.5rem;
+  color:var(--white);
+  position:relative;overflow:hidden;
+}
+.hero-card::before{
+  content:'';
+  position:absolute;
+  top:-80px;right:-80px;
+  width:220px;height:220px;
+  background:radial-gradient(circle,rgba(232,80,10,0.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hc-label{
+  font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-bottom:2rem;
+  font-weight:500;
+}
+.hc-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;
+  margin-bottom:2rem;
+}
+.hc-stat-val{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:2.8rem;font-weight:800;
+  line-height:1;letter-spacing:-0.04em;
+  color:var(--white);
+}
+.hc-stat-val span{color:var(--orange2)}
+.hc-stat-label{font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;font-weight:300}
+.hc-divider{
+  height:1px;background:rgba(255,255,255,0.1);margin-bottom:1.5rem;
+}
+.hc-certs{
+  display:flex;flex-direction:column;gap:0.7rem;
+}
+.hc-cert{
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.8rem;color:rgba(255,255,255,0.65);
+  font-weight:300;
+}
+.hc-cert-icon{
+  width:24px;height:24px;border-radius:6px;
+  background:rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.7rem;flex-shrink:0;
+}
+/* ── TICKER ── */
+.ticker-bar{
+  background:var(--ink);
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:0.9rem 0;
+  overflow:hidden;
+}
+.ticker-inner{
+  display:flex;gap:3rem;
+  animation:ticker 30s linear infinite;
+  width:max-content;
+}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{
+  font-size:0.75rem;font-weight:500;
+  color:rgba(255,255,255,0.35);
+  letter-spacing:0.1em;text-transform:uppercase;
+  white-space:nowrap;
+  display:flex;align-items:center;gap:1.5rem;
+}
+.ticker-item::after{content:'·';color:rgba(255,255,255,0.15)}
+
+/* ── SECTION SHARED ── */
+section{position:relative}
+.wrap{max-width:1300px;margin:0 auto;padding:6rem 2.5rem}
+
+.section-kicker{
+  font-size:0.72rem;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:1rem;
+}
+.section-h{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:clamp(1.9rem,3vw,2.75rem);
+  font-weight:700;letter-spacing:-0.03em;
+  line-height:1.1;color:var(--ink);
+  margin-bottom:1rem;
+}
+.section-p{
+  font-size:1rem;color:var(--muted);
+  font-weight:300;max-width:540px;line-height:1.75;
+}
+
+/* ── CAPABILITIES ── */
+.caps-bg{background:var(--white);border-top:1px solid var(--border)}
+.caps-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem;
+}
+.caps-header-text .section-p{max-width:400px}
+.view-all{
+  font-size:0.875rem;color:var(--ink);
+  text-decoration:none;font-weight:500;
+  border-bottom:1.5px solid var(--border2);
+  padding-bottom:1px;
+  transition:border-color 0.18s;
+  white-space:nowrap;
+}
+.view-all:hover{border-color:var(--orange)}
+
+.caps-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+}
+.cap-card{
+  background:var(--white);
+  padding:2.25rem 2rem;
+  text-decoration:none;color:inherit;
+  display:block;position:relative;
+  transition:background 0.2s;
+  overflow:hidden;
+}
+.cap-card:hover{background:var(--paper)}
+.cap-num{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.75rem;font-weight:700;
+  color:var(--border2);letter-spacing:0.06em;
+  margin-bottom:1.5rem;
+}
+.cap-icon{font-size:1.6rem;margin-bottom:1.25rem;display:block}
+.cap-card h3{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--ink);letter-spacing:-0.02em;
+  margin-bottom:0.65rem;
+}
+.cap-card p{
+  font-size:0.85rem;color:var(--muted);
+  line-height:1.65;margin-bottom:1.25rem;
+}
+.cap-link{
+  font-size:0.8rem;color:var(--orange);
+  font-weight:500;letter-spacing:0.04em;
+  display:inline-flex;align-items:center;gap:0.35rem;
+}
+.cap-link::after{content:'→';transition:transform 0.2s}
+.cap-card:hover .cap-link::after{transform:translateX(3px)}
+
+/* ── ABOUT ── */
+.about-bg{
+  background:var(--smoke);
+  border-top:1px solid var(--border);
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  align-items:start;
+}
+.about-left{}
+.about-right{}
+.about-year{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:7rem;font-weight:800;letter-spacing:-0.06em;
+  color:var(--border);line-height:1;
+  margin-bottom:-2rem;position:relative;z-index:0;
+  user-select:none;
+}
+.about-copy{
+  position:relative;z-index:1;
+}
+.about-copy p{
+  font-size:1rem;color:var(--muted);font-weight:300;
+  line-height:1.8;margin-bottom:1.25rem;
+}
+.about-values{
+  margin-top:2.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;
+}
+.val{
+  padding:1.25rem;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+.val h4{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.875rem;font-weight:700;
+  color:var(--ink);margin-bottom:0.35rem;
+  letter-spacing:-0.01em;
+}
+.val p{font-size:0.8rem;color:var(--muted);line-height:1.55}
+
+.about-right-top{
+  background:var(--ink);border-radius:16px;
+  padding:2.5rem;color:var(--white);margin-bottom:1rem;
+  position:relative;overflow:hidden;
+}
+.about-right-top::after{
+  content:'';position:absolute;
+  bottom:-50px;right:-50px;
+  width:180px;height:180px;
+  background:radial-gradient(circle,rgba(0,137,123,0.2) 0%,transparent 70%);
+  pointer-events:none;
+}
+.art-label{
+  font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-bottom:1.5rem;font-weight:500;
+}
+.art-headline{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.4rem;font-weight:700;
+  letter-spacing:-0.02em;color:var(--white);
+  line-height:1.3;margin-bottom:1.25rem;
+}
+.art-desc{font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.65;font-weight:300}
+
+.about-cert-strip{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:12px;padding:1.5rem;
+  display:flex;gap:1rem;flex-wrap:wrap;align-items:center;
+}
+.cert-pill{
+  background:var(--smoke);border:1px solid var(--border);
+  color:var(--ink);font-size:0.78rem;font-weight:500;
+  padding:0.4rem 0.85rem;border-radius:100px;
+  letter-spacing:0.02em;
+}
+
+/* ── WHY ── */
+.why-bg{background:var(--white);border-top:1px solid var(--border)}
+.why-header{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;margin-bottom:4rem;align-items:end;
+}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.why-card{
+  padding:0;border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.why-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(13,17,23,0.08);
+}
+.why-top{
+  padding:1.75rem 1.75rem 0;
+}
+.why-num{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:3rem;font-weight:800;letter-spacing:-0.05em;
+  color:var(--smoke);line-height:1;
+  margin-bottom:1rem;
+}
+.why-card h3{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1rem;font-weight:700;color:var(--ink);
+  letter-spacing:-0.01em;margin-bottom:0.5rem;
+}
+.why-card p{
+  font-size:0.83rem;color:var(--muted);
+  line-height:1.65;padding:0 1.75rem 1.75rem;
+}
+.why-bar{height:3px}
+.why-bar.c1{background:var(--orange)}
+.why-bar.c2{background:var(--blue2)}
+.why-bar.c3{background:var(--teal)}
+.why-bar.c4{background:#9c27b0}
+.why-bar.c5{background:#f4a100}
+.why-bar.c6{background:#e53935}
+
+/* ── CLIENTS ── */
+.clients-bg{
+  background:var(--smoke);border-top:1px solid var(--border);
+}
+.clients-wrap{max-width:1300px;margin:0 auto;padding:5rem 2.5rem}
+.clients-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem;
+}
+.clients-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:1px;
+  background:var(--border);border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;
+  margin-bottom:2rem;
+}
+.client-cell{
+  background:var(--white);
+  padding:2rem 1rem;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:0.5rem;
+  text-align:center;
+  transition:background 0.18s;
+}
+.client-cell:hover{background:var(--smoke)}
+.client-name{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1rem;font-weight:700;
+  color:var(--ink2);letter-spacing:-0.01em;
+}
+.client-sector{
+  font-size:0.7rem;color:var(--muted2);
+  font-weight:400;letter-spacing:0.04em;text-transform:uppercase;
+}
+.clients-note{
+  font-size:0.875rem;color:var(--muted);
+  font-weight:300;text-align:center;line-height:1.6;
+}
+.clients-note strong{color:var(--ink);font-weight:500}
+
+/* ── TECH STACK ── */
+.tech-bg{background:var(--white);border-top:1px solid var(--border)}
+.tech-overflow{overflow:hidden;position:relative;margin-top:2.5rem}
+.tech-overflow::before,
+.tech-overflow::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;
+}
+.tech-overflow::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.tech-overflow::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+.tech-row{display:flex;gap:0.75rem;animation:scroll 24s linear infinite;width:max-content;margin-bottom:0.75rem}
+.tech-row2{animation-direction:reverse;animation-duration:18s}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tech-tag{
+  background:var(--smoke);border:1px solid var(--border);
+  font-size:0.82rem;color:var(--ink2);font-weight:400;
+  padding:0.55rem 1.25rem;border-radius:100px;white-space:nowrap;
+  transition:border-color 0.18s,color 0.18s;
+}
+.tech-tag:hover{border-color:var(--border2);color:var(--ink)}
+
+/* ── APPROACH ── */
+.approach-bg{
+  background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);
+}
+.approach-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+.approach-text .section-kicker{color:var(--orange2)}
+.approach-text .section-h{color:var(--white)}
+.approach-text .section-p{color:rgba(255,255,255,0.5)}
+.approach-steps{margin-top:2.5rem;display:flex;flex-direction:column;gap:0}
+.step{
+  display:flex;gap:1.5rem;padding:1.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  align-items:flex-start;
+}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step-num{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.75rem;font-weight:700;
+  color:rgba(255,255,255,0.25);letter-spacing:0.06em;
+  padding-top:0.25rem;min-width:2rem;
+}
+.step-body h4{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1rem;font-weight:700;
+  color:rgba(255,255,255,0.9);letter-spacing:-0.01em;
+  margin-bottom:0.35rem;
+}
+.step-body p{font-size:0.83rem;color:rgba(255,255,255,0.42);line-height:1.65;font-weight:300}
+
+.approach-visual{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.av-card{
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;padding:1.75rem;
+}
+.av-big{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:3rem;font-weight:800;letter-spacing:-0.04em;
+  color:var(--white);line-height:1;margin-bottom:0.5rem;
+}
+.av-big span{color:var(--orange2)}
+.av-label{font-size:0.78rem;color:rgba(255,255,255,0.35);font-weight:300}
+.av-card.large{grid-column:span 2;background:rgba(255,255,255,0.03)}
+
+/* ── CTA ── */
+.cta-band{
+  background:var(--orange);
+  padding:4.5rem 2.5rem;
+  text-align:center;
+}
+.cta-band h2{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:clamp(1.9rem,3.5vw,3rem);
+  font-weight:800;letter-spacing:-0.03em;
+  color:var(--white);margin-bottom:0.75rem;
+  line-height:1.1;
+}
+.cta-band p{
+  font-size:1rem;color:rgba(255,255,255,0.75);
+  font-weight:300;margin-bottom:2rem;
+}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{
+  background:var(--white);color:var(--orange);
+  font-family:'Onest',sans-serif;
+  font-size:0.9rem;font-weight:600;
+  padding:0.9rem 2.2rem;border-radius:100px;
+  border:none;cursor:pointer;text-decoration:none;
+  display:inline-block;letter-spacing:0.02em;
+  transition:transform 0.15s,box-shadow 0.15s;
+}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.15)}
+.btn-outline-white{
+  background:transparent;color:var(--white);
+  font-family:'Onest',sans-serif;
+  font-size:0.9rem;font-weight:400;
+  padding:0.9rem 2.2rem;border-radius:100px;
+  border:2px solid rgba(255,255,255,0.5);
+  cursor:pointer;text-decoration:none;
+  display:inline-block;letter-spacing:0.02em;
+  transition:border-color 0.18s,background 0.18s;
+}
+.btn-outline-white:hover{border-color:var(--white);background:rgba(255,255,255,0.1)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:4.5rem 2.5rem 2.5rem;
+}
+.footer-inner{max-width:1300px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;
+  gap:3rem;margin-bottom:4rem;
+}
+.footer-brand .logo{margin-bottom:1.25rem;display:inline-flex}
+.footer-brand p{
+  font-size:0.85rem;color:rgba(255,255,255,0.38);
+  line-height:1.75;max-width:290px;font-weight:300;
+  margin-bottom:1.5rem;
+}
+.footer-contact-items{display:flex;flex-direction:column;gap:0.5rem}
+.footer-contact-items a{
+  font-size:0.82rem;color:rgba(255,255,255,0.38);
+  text-decoration:none;font-weight:300;
+  transition:color 0.18s;
+}
+.footer-contact-items a:hover{color:rgba(255,255,255,0.8)}
+.footer-col h5{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.82rem;font-weight:700;
+  color:rgba(255,255,255,0.7);letter-spacing:0.04em;
+  text-transform:uppercase;margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-col ul a{
+  font-size:0.82rem;color:rgba(255,255,255,0.35);
+  text-decoration:none;font-weight:300;
+  transition:color 0.18s;
+}
+.footer-col ul a:hover{color:rgba(255,255,255,0.75)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding-top:2rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.78rem;color:rgba(255,255,255,0.25);
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom a{color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.18s}
+.footer-bottom a:hover{color:rgba(255,255,255,0.6)}
+.footer-bottom-links{display:flex;gap:1.5rem}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-top{grid-template-columns:1fr;gap:3rem}
+  .hero-card{display:none}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .why-header{grid-template-columns:1fr}
+  .approach-grid{grid-template-columns:1fr;gap:3rem}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .caps-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-top{grid-template-columns:1fr}
+  .about-values{grid-template-columns:1fr}
+  .approach-visual{grid-template-columns:1fr}
+  .av-card.large{grid-column:span 1}
+}
+@media(max-width:480px){
+  .caps-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:repeat(2,1fr)}
+  .hc-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-dot"></span>
+      Ornate TechnoServices
+    </a>
+    <ul class="nav-links">
+      <li><a href="#capabilities">What We Do</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#why">Why Ornate</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#careers">Careers</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:01204484666" class="nav-contact">0120-4484-666</a>
+      <a href="#contact" class="btn-nav">Talk to Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-text">
+      <div class="hero-tag">Since 2009 · Noida, India</div>
+      <h1>
+        Shaping<br>
+        <em>Tomorrow's</em><br>
+        Enterprise
+      </h1>
+      <p class="hero-desc">We partner with businesses and government organizations to deliver custom software, mobile platforms, cloud infrastructure, and digital transformation — backed by 16 years of proven execution.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Start a Conversation</a>
+        <a href="#capabilities" class="btn-ghost">Explore Our Services</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Microsoft Certified
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          ISO Accredited
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          CMMI Level 3
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-label">By the Numbers</div>
+      <div class="hc-stats">
+        <div>
+          <div class="hc-stat-val">16<span>+</span></div>
+          <div class="hc-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="hc-stat-val">1K<span>+</span></div>
+          <div class="hc-stat-label">Projects Done</div>
+        </div>
+        <div>
+          <div class="hc-stat-val">250<span>+</span></div>
+          <div class="hc-stat-label">Clients Served</div>
+        </div>
+        <div>
+          <div class="hc-stat-val">100<span>%</span></div>
+          <div class="hc-stat-label">Quality Assured</div>
+        </div>
+      </div>
+      <div class="hc-divider"></div>
+      <div class="hc-certs">
+        <div class="hc-cert">
+          <div class="hc-cert-icon">🏅</div>
+          Microsoft Partner Network
+        </div>
+        <div class="hc-cert">
+          <div class="hc-cert-icon">✅</div>
+          ISO 9001 Certified
+        </div>
+        <div class="hc-cert">
+          <div class="hc-cert-icon">⭐</div>
+          CMMI Level 3 Appraised
+        </div>
+        <div class="hc-cert">
+          <div class="hc-cert-icon">🏛</div>
+          Govt. & PSU Empanelled
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      <div class="ticker-item">Web Development</div>
+      <div class="ticker-item">Mobile App Development</div>
+      <div class="ticker-item">UI/UX Design</div>
+      <div class="ticker-item">ERP Solutions</div>
+      <div class="ticker-item">SAP Services</div>
+      <div class="ticker-item">Cloud Hosting</div>
+      <div class="ticker-item">Digital Marketing</div>
+      <div class="ticker-item">IT Staffing</div>
+      <div class="ticker-item">Cybersecurity</div>
+      <div class="ticker-item">iNET Development</div>
+      <!-- duplicate -->
+      <div class="ticker-item">Web Development</div>
+      <div class="ticker-item">Mobile App Development</div>
+      <div class="ticker-item">UI/UX Design</div>
+      <div class="ticker-item">ERP Solutions</div>
+      <div class="ticker-item">SAP Services</div>
+      <div class="ticker-item">Cloud Hosting</div>
+      <div class="ticker-item">Digital Marketing</div>
+      <div class="ticker-item">IT Staffing</div>
+      <div class="ticker-item">Cybersecurity</div>
+      <div class="ticker-item">iNET Development</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="caps-bg">
+  <div class="wrap">
+    <div class="caps-header">
+      <div class="caps-header-text">
+        <div class="section-kicker">What We Do</div>
+        <h2 class="section-h">Full-stack IT capabilities<br>for every business layer</h2>
+        <p class="section-p">From strategy and design to development, deployment, and growth — we cover your entire digital stack under one roof.</p>
+      </div>
+      <a href="#" class="view-all">All Services &rarr;</a>
+    </div>
+    <div class="caps-grid reveal">
+      <a href="#" class="cap-card">
+        <div class="cap-num">01</div>
+        <span class="cap-icon">🌐</span>
+        <h3>Web Development</h3>
+        <p>Custom-built, scalable websites and web applications using PHP, .NET, WordPress, Drupal, Magento, and modern frameworks.</p>
+        <span class="cap-link">Explore</span>
+      </a>
+      <a href="#" class="cap-card">
+        <div class="cap-num">02</div>
+        <span class="cap-icon">📱</span>
+        <h3>Mobile App Development</h3>
+        <p>Native Android &amp; iOS, React Native, and cross-platform apps built for performance, scale, and seamless user experience.</p>
+        <span class="cap-link">Explore</span>
+      </a>
+      <a href="#" class="cap-card">
+        <div class="cap-num">03</div>
+        <span class="cap-icon">✦</span>
+        <h3>UI/UX &amp; Design</h3>
+        <p>Research-led interface design, Angular/React front-ends, and graphics that convert visitors into loyal users.</p>
+        <span class="cap-link">Explore</span>
+      </a>
+      <a href="#" class="cap-card">
+        <div class="cap-num">04</div>
+        <span class="cap-icon">⚙️</span>
+        <h3>Software &amp; ERP</h3>
+        <p>Enterprise software, iNET applications, and custom ERP solutions engineered for complex operational workflows.</p>
+        <span class="cap-link">Explore</span>
+      </a>
+      <a href="#" class="cap-card">
+        <div class="cap-num">05</div>
+        <span class="cap-icon">☁️</span>
+        <h3>Cloud &amp; Hosting</h3>
+        <p>Shared, VPS, dedicated, and cloud hosting with 99.9% uptime, DDoS protection, and enterprise-grade security.</p>
+        <span class="cap-link">Explore</span>
+      </a>
+      <a href="#" class="cap-card">
+        <div class="cap-num">06</div>
+        <span class="cap-icon">📈</span>
+        <h3>Digital Marketing</h3>
+        <p>SEO, SMO, and performance marketing strategies that grow organic visibility, qualified traffic, and measurable ROI.</p>
+        <span class="cap-link">Explore</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-bg">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-year">2009</div>
+        <div class="about-copy reveal">
+          <div class="section-kicker">Our Story</div>
+          <h2 class="section-h">Technology partner<br>with a purpose</h2>
+          <p>Ornate TechnoServices began as an offshore outsourcing proprietorship in 2009 and became a Private Limited company in 2011. Over 16 years, we've grown into one of India's trusted multi-certified IT partners — serving PSUs, enterprises, and startups nationwide.</p>
+          <p>We are accredited by Microsoft, ISO, and hold CMMI Level 3 — a standard achieved by fewer than 5% of IT companies globally. Our work spans government, healthcare, manufacturing, retail, and education.</p>
+          <div class="about-values">
+            <div class="val">
+              <h4>Innovation First</h4>
+              <p>Solving complex problems with creative, future-ready approaches.</p>
+            </div>
+            <div class="val">
+              <h4>Integrity Always</h4>
+              <p>Honest advice, transparent delivery, no shortcuts.</p>
+            </div>
+            <div class="val">
+              <h4>Client Success</h4>
+              <p>Your business outcomes are our primary metric.</p>
+            </div>
+            <div class="val">
+              <h4>Security-First</h4>
+              <p>Data protection and privacy built into every solution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right reveal">
+        <div class="about-right-top">
+          <div class="art-label">Our Positioning</div>
+          <div class="art-headline">AI-ready technology<br>solutions for the<br>modern enterprise</div>
+          <p class="art-desc">As AI reshapes every industry, we are actively building AI-integrated solutions — from intelligent web apps to automated workflows — ensuring our clients stay ahead of the curve.</p>
+        </div>
+        <div style="height:1rem"></div>
+        <div class="about-cert-strip">
+          <span class="cert-pill">Microsoft Partner</span>
+          <span class="cert-pill">ISO Certified</span>
+          <span class="cert-pill">CMMI Level 3</span>
+          <span class="cert-pill">Pvt. Ltd. 2011</span>
+          <span class="cert-pill">Govt. Empanelled</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="why-bg">
+  <div class="wrap">
+    <div class="why-header reveal">
+      <div>
+        <div class="section-kicker">Why Choose Ornate</div>
+        <h2 class="section-h">What makes us the<br>right partner</h2>
+      </div>
+      <p class="section-p" style="max-width:420px;margin-top:0">We've spent 16 years building a reputation for quality, confidentiality, and results. Here's what that looks like in practice.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="why-bar c1"></div>
+        <div class="why-top">
+          <div class="why-num">01</div>
+          <h3>Experienced, Senior Team</h3>
+        </div>
+        <p>Our engineers and consultants bring deep domain expertise. We don't staff your project with juniors — you work with people who've seen this problem before.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar c2"></div>
+        <div class="why-top">
+          <div class="why-num">02</div>
+          <h3>100% Quality Guaranteed</h3>
+        </div>
+        <p>Every deliverable undergoes rigorous QA. Our CMMI Level 3 process maturity means you get consistent quality, not just occasional excellence.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar c3"></div>
+        <div class="why-top">
+          <div class="why-num">03</div>
+          <h3>Strict Confidentiality</h3>
+        </div>
+        <p>Your IP, data, and product concepts are protected with enterprise-grade NDAs, access controls, and security protocols at every stage.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar c4"></div>
+        <div class="why-top">
+          <div class="why-num">04</div>
+          <h3>PSU &amp; Enterprise Trust</h3>
+        </div>
+        <p>From BHEL, NTPC, and STPI to global startups — 250+ organizations trust us to deliver. That trust isn't claimed, it's earned project by project.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar c5"></div>
+        <div class="why-top">
+          <div class="why-num">05</div>
+          <h3>24/7 Technical Support</h3>
+        </div>
+        <p>Round-the-clock support means your systems are never left unmonitored. Fast response SLAs, proactive monitoring, real accountability.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar c6"></div>
+        <div class="why-top">
+          <div class="why-num">06</div>
+          <h3>Complete Digital Stack</h3>
+        </div>
+        <p>Strategy, design, development, deployment, marketing — all under one roof. One partner, zero handoff friction, faster go-to-market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients" class="clients-bg">
+  <div class="clients-wrap">
+    <div class="clients-header reveal">
+      <div>
+        <div class="section-kicker">Client Portfolio</div>
+        <h2 class="section-h">Trusted by India's<br>leading organizations</h2>
+      </div>
+      <a href="#" class="view-all">See All Clients &rarr;</a>
+    </div>
+    <div class="clients-grid reveal">
+      <div class="client-cell">
+        <div class="client-name">BHEL</div>
+        <div class="client-sector">PSU · Engineering</div>
+      </div>
+      <div class="client-cell">
+        <div class="client-name">NTPC</div>
+        <div class="client-sector">PSU · Energy</div>
+      </div>
+      <div class="client-cell">
+        <div class="client-name">STPI</div>
+        <div class="client-sector">Govt. · Technology</div>
+      </div>
+      <div class="client-cell">
+        <div class="client-name">BSBCCL</div>
+        <div class="client-sector">PSU · Coal</div>
+      </div>
+      <div class="client-cell">
+        <div class="client-name">250+</div>
+        <div class="client-sector">More Clients</div>
+      </div>
+      <div class="client-cell">
+        <div class="client-name" style="font-size:0.8rem;color:var(--muted)">Global Brands<br>+ Startups</div>
+        <div class="client-sector">Multiple Sectors</div>
+      </div>
+    </div>
+    <p class="clients-note reveal">Serving <strong>private enterprises, central PSUs, and government bodies</strong> across India and globally since 2009. From Noida HQ, we deliver across industries — manufacturing, energy, retail, education, healthcare, and more.</p>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-bg">
+  <div class="wrap" style="padding-bottom:3rem">
+    <div style="text-align:center;max-width:560px;margin:0 auto 0.5rem">
+      <div class="section-kicker">Technology Expertise</div>
+      <h2 class="section-h" style="font-size:1.8rem">The stack behind<br>our solutions</h2>
+    </div>
+  </div>
+  <div class="tech-overflow" style="padding-bottom:3rem">
+    <div class="tech-row">
+      <span class="tech-tag">PHP</span><span class="tech-tag">React JS</span><span class="tech-tag">Angular JS</span><span class="tech-tag">Node.js</span><span class="tech-tag">React Native</span><span class="tech-tag">Android SDK</span><span class="tech-tag">iOS / Swift</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">WordPress</span><span class="tech-tag">Drupal</span><span class="tech-tag">Magento</span><span class="tech-tag">AWS</span>
+      <span class="tech-tag">PHP</span><span class="tech-tag">React JS</span><span class="tech-tag">Angular JS</span><span class="tech-tag">Node.js</span><span class="tech-tag">React Native</span><span class="tech-tag">Android SDK</span><span class="tech-tag">iOS / Swift</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">WordPress</span><span class="tech-tag">Drupal</span><span class="tech-tag">Magento</span><span class="tech-tag">AWS</span>
+    </div>
+    <div style="height:0.75rem"></div>
+    <div class="tech-row tech-row2">
+      <span class="tech-tag">Azure</span><span class="tech-tag">Google Cloud</span><span class="tech-tag">Docker</span><span class="tech-tag">SAP Solutions</span><span class="tech-tag">ERP / CRM</span><span class="tech-tag">MySQL</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Redis</span><span class="tech-tag">GraphQL</span><span class="tech-tag">SEO / SEM</span><span class="tech-tag">iNET</span><span class="tech-tag">Hybrid Apps</span>
+      <span class="tech-tag">Azure</span><span class="tech-tag">Google Cloud</span><span class="tech-tag">Docker</span><span class="tech-tag">SAP Solutions</span><span class="tech-tag">ERP / CRM</span><span class="tech-tag">MySQL</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Redis</span><span class="tech-tag">GraphQL</span><span class="tech-tag">SEO / SEM</span><span class="tech-tag">iNET</span><span class="tech-tag">Hybrid Apps</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach-bg">
+  <div class="wrap">
+    <div class="approach-grid">
+      <div class="approach-text reveal">
+        <div class="section-kicker">How We Work</div>
+        <h2 class="section-h" style="color:#fff">A process built<br>for certainty</h2>
+        <p class="section-p">We don't just deliver code — we deliver outcomes. Our structured engagement model ensures every project is scoped, executed, and handed over with precision.</p>
+        <div class="approach-steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <div class="step-body">
+              <h4>Discovery &amp; Scoping</h4>
+              <p>Deep dive into your business goals, technical constraints, and user needs to define a clear, deliverable roadmap.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div class="step-body">
+              <h4>Design &amp; Architecture</h4>
+              <p>UI/UX prototyping and system architecture reviewed and approved before a single line of production code is written.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div class="step-body">
+              <h4>Agile Development</h4>
+              <p>Sprint-based delivery with continuous client visibility, QA checkpoints, and zero-surprise releases.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">04</span>
+            <div class="step-body">
+              <h4>Launch &amp; Support</h4>
+              <p>Smooth go-live, full knowledge transfer, and 24/7 post-launch support — your product is never left unattended.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="approach-visual reveal">
+        <div class="av-card">
+          <div class="av-big">16<span>+</span></div>
+          <div class="av-label">Years in operation</div>
+        </div>
+        <div class="av-card">
+          <div class="av-big">250<span>+</span></div>
+          <div class="av-label">Happy clients</div>
+        </div>
+        <div class="av-card large">
+          <div class="av-big" style="font-size:2.2rem">CMMI<span> L3</span></div>
+          <div class="av-label" style="margin-top:0.25rem">Process maturity — achieved by &lt;5% of IT firms globally. Every project follows a verified, repeatable delivery framework.</div>
+        </div>
+        <div class="av-card">
+          <div class="av-big">1K<span>+</span></div>
+          <div class="av-label">Projects completed</div>
+        </div>
+        <div class="av-card">
+          <div class="av-big">24<span>/7</span></div>
+          <div class="av-label">Support coverage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div id="contact" class="cta-band">
+  <h2>Let's build something<br>that matters.</h2>
+  <p>Free consultation. No commitment. Just a conversation about your goals.</p>
+  <div class="cta-actions">
+    <a href="mailto:info@ornatets.com" class="btn-white">Get Free Consultation</a>
+    <a href="tel:01204484666" class="btn-outline-white">Call: 0120-4484-666</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="careers">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color:rgba(255,255,255,0.85)">
+          <span class="logo-dot"></span>
+          Ornate TechnoServices
+        </a>
+        <p>Leading IT services company headquartered in Noida, India. Microsoft Certified · ISO Accredited · CMMI Level 3. Delivering digital excellence since 2009.</p>
+        <div class="footer-contact-items">
+          <a href="tel:01204484666">☎ 0120-4484-666</a>
+          <a href="mailto:info@ornatets.com">✉ info@ornatets.com</a>
+          <a href="#">H-34, Sector 63, Noida – 201301</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Mobile Apps</a></li>
+          <li><a href="#">UI/UX Design</a></li>
+          <li><a href="#">Software / ERP</a></li>
+          <li><a href="#">SAP Solutions</a></li>
+          <li><a href="#">Cloud Hosting</a></li>
+          <li><a href="#">Digital Marketing</a></li>
+          <li><a href="#">IT Staffing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Client Portfolio</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Life @ Ornate</a></li>
+          <li><a href="#">Blog &amp; News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Get a Quote</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Ornate TechnoServices Pvt. Ltd. All Rights Reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 90);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<!-- WATERMARK BAR -->
+<div class="wm-bar">
+  <span class="wm-badge">Concept Design</span>
+  <span class="wm-divider"></span>
+  <span class="wm-text">Designed by <strong>Deepak Singh</strong> &nbsp;·&nbsp; <a href="https://www.behance.net/deepaksinghjl" target="_blank">behance.net/deepaksinghjl</a></span>
+  <span class="wm-divider"></span>
+  <span class="wm-text">© 2025 · For assessment &amp; portfolio use only · Unauthorized commercial use prohibited</span>
+</div>
+
+<script>
+/* © 2025 Deepak Singh — behance.net/deepaksinghjl
+   Design concept for UI/UX assessment purposes only.
+   Unauthorized use or commercial deployment is strictly prohibited. */
+console.warn(
+  '%c© 2025 Deepak Singh',
+  'color:#e8500a;font-size:16px;font-weight:bold;',
+);
+console.warn(
+  '%cThis is an original UI/UX design concept created for assessment purposes only.\nPortfolio: https://www.behance.net/deepaksinghjl\nUnauthorized commercial use is strictly prohibited.',
+  'color:#ffffff;background:#0d1117;padding:8px 12px;font-size:12px;line-height:1.6;'
+);
+</script>
+</body>
+</html>
